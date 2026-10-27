@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AgriNote — Smart Farming Assistant</title>
+  <meta name="description" content="AgriNote is a smart farming diary for Android. Track crops, expenses and income, and see your profit in simple charts. By PRIME Developer.">
+  <meta name="theme-color" content="#9ad6f7">
+  <meta property="og:title" content="AgriNote — Smart Farming Assistant">
+  <meta property="og:description" content="Better Farming. Brighter Future. Track crops, expenses, income and profit in one app.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/webp" href="logo-leaf.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600;700;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+      <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"/></symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></symbol>
+      <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></symbol>
+      <symbol id="i-up" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+      <symbol id="i-down" viewBox="0 0 24 24"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.7 1.8 1.8.7-1.8.7L19 20l-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></symbol>
+      <symbol id="i-insta" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="wrap bar">
+      <a href="#home" class="brand" aria-label="AgriNote home">
+        <img src="logo-leaf.webp" width="260" height="190" alt="" class="brand-leaf">
+        <span class="brand-name">Agri<b>Note</b></span>
+      </a>
+
+      <nav id="site-nav" class="nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="bar-actions">
+        <a href="https://github.com/Prime-Developer93/agrinote-website/releases/download/v1.0.0/AgriNote.apk" class="btn btn-primary btn-sm" data-apk>
+          <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> Download
+        </a>
+        <button class="burger" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <i class="bokeh bk1"></i><i class="bokeh bk2"></i><i class="bokeh bk3"></i>
+      <img src="logo-leaf.webp" width="260" height="190" alt="" aria-hidden="true" class="float-leaf fl1">
+      <img src="logo-leaf.webp" width="260" height="190" alt="" aria-hidden="true" class="float-leaf fl2">
+
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="pill"><span class="dot"></span> SMART FARMING ASSISTANT</p>
+          <h1>Better Farming.<br><span>Brighter Future.</span></h1>
+          <p class="lead">
+            AgriNote is your digital farming diary. Keep every crop, expense and sale in one place,
+            and see your real profit at a glance.
+          </p>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="https://github.com/Prime-Developer93/agrinote-website/releases/download/v1.0.0/AgriNote.apk" data-apk>
+              <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> Download APK
+            </a>
+            <a class="btn btn-ghost" href="#features">See Features</a>
+          </div>
+          <p class="note">Android app · About 8 MB · Direct download</p>
+
+          <ul class="chips">
+            <li><span class="chip-ic"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg></span>Track Expenses &amp; Income</li>
+            <li><span class="chip-ic"><svg class="ic" aria-hidden="true"><use href="#i-sprout"/></svg></span>Crop Management</li>
+            <li><span class="chip-ic"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg></span>Works Offline + Sync</li>
+            <li><span class="chip-ic"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg></span>Multi-Language (EN / HI / MR)</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone">
+            <span class="phone-notch"></span>
+            <img src="screen-home.webp" width="540" height="982" alt="AgriNote home screen showing total expenses, total income, net profit and active crops" fetchpriority="high">
+          </div>
+          <p class="script">Grow Together</p>
+        </div>
+      </div>
+
+      <svg class="hills" viewBox="0 0 1440 160" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#b5e08f" d="M0 80C220 10 470 20 720 70s520 70 720-20v110H0z"/>
+        <path fill="#f6fbf1" d="M0 118C300 60 580 150 900 112s400-40 540-4v52H0z"/>
+      </svg>
+    </section>
+
+    <!-- Features -->
+    <section class="section features" id="features">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">EVERYTHING IN ONE PLACE</p>
+          <h2>Everything your farm diary needs</h2>
+          <p>Stop juggling notebooks and calculators. AgriNote keeps your farm's numbers simple, clear and always with you.</p>
+        </header>
+
+        <div class="cards">
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-sprout"/></svg></span>
+            <h3>Crop Management</h3>
+            <p>Add each crop with its area in acres and sowing date. See the days left or passed and its Active status at a glance.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></span>
+            <h3>Expense Tracking</h3>
+            <p>Log every expense under the crop it belongs to. Your total spending is always one tap away.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-up"/></svg></span>
+            <h3>Income Tracking</h3>
+            <p>Record each sale with the market, date and amount. Every sale shows its share of that crop's income.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+            <h3>Profit at a Glance</h3>
+            <p>Expenses, income and net profit for every crop, with simple bars that show where your money goes.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-chart"/></svg></span>
+            <h3>Farm Analytics</h3>
+            <p>Financial trends, income and expense breakdowns, and a crop-wise profit comparison with margin.</p>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg></span>
+            <h3>Themes &amp; Effects</h3>
+            <p>Choose from 6 soft themes, including a dark Midnight Forest, and add falling leaves, wind or rain.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screens -->
+    <section class="section screens" id="screens">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">INSIDE THE APP</p>
+          <h2>See AgriNote in action</h2>
+          <p>A quick look inside the app. Screens show sample data.</p>
+        </header>
+      </div>
+
+      <div class="shots" tabindex="0" aria-label="App screenshots, scroll sideways">
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-home.webp" width="540" height="982" loading="lazy" decoding="async" alt="Home screen"></div>
+          <figcaption><b>Your farm at a glance</b><span>Expenses, income and profit on Home</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-crops.webp" width="540" height="982" loading="lazy" decoding="async" alt="Crops screen"></div>
+          <figcaption><b>Manage every crop</b><span>Area, days and profit in one card</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-income.webp" width="540" height="982" loading="lazy" decoding="async" alt="Income entries screen"></div>
+          <figcaption><b>Record every sale</b><span>Market, date, amount and share</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-trends.webp" width="540" height="982" loading="lazy" decoding="async" alt="Financial trends and expense breakdown screen"></div>
+          <figcaption><b>Understand your numbers</b><span>Trends and expense breakdown</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-profit.webp" width="540" height="982" loading="lazy" decoding="async" alt="Crop-wise profit comparison screen"></div>
+          <figcaption><b>Compare your crops</b><span>Profit and margin side by side</span></figcaption>
+        </figure>
+        <figure class="shot">
+          <div class="phone"><span class="phone-notch"></span><img src="screen-themes.webp" width="540" height="982" loading="lazy" decoding="async" alt="Themes and animation effects screen"></div>
+          <figcaption><b>Make it yours</b><span>Themes and gentle effects</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section steps-section" id="how">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">SIMPLE TO USE</p>
+          <h2>Three steps to a clearer farm</h2>
+        </header>
+        <ol class="steps">
+          <li class="reveal"><span class="num">1</span><div><h3>Add your crop</h3><p>Enter the crop name, area in acres and sowing date.</p></div></li>
+          <li class="reveal"><span class="num">2</span><div><h3>Record your money</h3><p>Add expenses and sales as they happen, right from your phone.</p></div></li>
+          <li class="reveal"><span class="num">3</span><div><h3>Know your profit</h3><p>Open Analytics to see trends and compare how each crop is doing.</p></div></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- About / Developer -->
+    <section class="section about" id="about">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">ABOUT</p>
+          <h2>Built for farmers, built with purpose</h2>
+          <p>AgriNote replaces the paper diary with something simple, fast and clear. It is made to be easy for anyone who works on a farm, whether you grow one crop or many.</p>
+        </header>
+
+        <div class="dev reveal">
+          <img src="prime-logo.webp" width="360" height="360" loading="lazy" decoding="async" alt="PRIME Developer logo" class="dev-logo">
+          <div class="dev-text">
+            <p class="dev-kicker">DESIGNED &amp; DEVELOPED BY</p>
+            <h3>PRIME Developer</h3>
+            <p class="dev-tag">Technology With Purpose</p>
+            <p>AgriNote is a product of PRIME Developer. Questions, feedback or ideas? Message us anytime.</p>
+            <div class="actions">
+              <a class="btn btn-light" href="https://t.me/primedeveloper93" target="_blank" rel="noopener">
+                <svg class="ic" aria-hidden="true"><use href="#i-send"/></svg> Telegram
+              </a>
+              <a class="btn btn-outline" href="https://www.instagram.com/pri_me_developer/" target="_blank" rel="noopener">
+                <svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg> Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Download -->
+    <section class="section download" id="download">
+      <div class="wrap">
+        <div class="download-box reveal">
+          <img src="logo-leaf.webp" width="260" height="190" loading="lazy" decoding="async" alt="" aria-hidden="true" class="download-leaf">
+          <p class="kicker light">YOUR FARMING COMPANION</p>
+          <h2>Get AgriNote for Android</h2>
+          <p class="download-sub">Move your farm records from paper to your phone. Download, install and start in minutes.</p>
+          <a class="btn btn-white btn-lg" href="https://github.com/Prime-Developer93/agrinote-website/releases/download/v1.0.0/AgriNote.apk" data-apk>
+            <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg> Download AgriNote APK
+          </a>
+          <p class="note light">Android only · About 8 MB · Version 1.0.0</p>
+
+          <ol class="install">
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Tap <b>Download</b> and wait for the file to finish.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>Open the downloaded file.</span></li>
+            <li><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span>If asked, allow installs from your browser, then tap <b>Install</b>.</span></li>
+          </ol>
+          <p class="fine">Because the app is installed outside the Play Store, your phone may show a standard safety message. This is normal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <header class="section-head reveal">
+          <p class="kicker">GET IN TOUCH</p>
+          <h2>We'd love to hear from you</h2>
+          <p>Found a problem or have an idea to make AgriNote better? Reach out on Telegram or Instagram.</p>
+        </header>
+
+        <div class="contact-grid">
+          <a class="contact-card reveal" href="https://t.me/primedeveloper93" target="_blank" rel="noopener">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></span>
+            <span><b>Telegram</b><small>t.me/primedeveloper93</small></span>
+          </a>
+          <a class="contact-card reveal" href="https://www.instagram.com/pri_me_developer/" target="_blank" rel="noopener">
+            <span class="card-ic"><svg class="ic" aria-hidden="true"><use href="#i-insta"/></svg></span>
+            <span><b>Instagram</b><small>PRIME DEVELOPER · @pri_me_developer</small></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot">
+      <a href="#home" class="brand brand-dark" aria-label="AgriNote home">
+        <img src="logo-leaf.webp" width="260" height="190" loading="lazy" decoding="async" alt="" class="brand-leaf">
+        <span class="brand-name">Agri<b>Note</b></span>
+      </a>
+      <p class="foot-tag">Smart Farming Assistant</p>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <a href="#download">Download</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <p class="credit">A product of <b>PRIME Developer</b> · Technology With Purpose</p>
+      <p class="copy">© <span id="year">2026</span> AgriNote. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body> 
+</html>
